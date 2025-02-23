@@ -2,333 +2,141 @@ package com.toolbox;
 
 public class StateHelper {
 
-	public static String stateToAbbreviation(String state) {
-		String abbreviation;
-		if (state == null || state.isEmpty()) {
-			state = "";
-		}
-
-		switch (state.toUpperCase()) {
-		case "ALABAMA":
-			abbreviation = "AL";
-			break;
-		case "ALASKA":
-			abbreviation = "AK";
-			break;
-		case "ARIZONA":
-			abbreviation = "AZ";
-			break;
-		case "ARKANSAS":
-			abbreviation = "AR";
-			break;
-		case "CALIFORNIA":
-			abbreviation = "CA";
-			break;
-		case "COLORADO":
-			abbreviation = "CO";
-			break;
-		case "CONNECTICUT":
-			abbreviation = "CT";
-			break;
-		case "DELAWARE":
-			abbreviation = "DE";
-			break;
-		case "FLORIDA":
-			abbreviation = "FL";
-			break;
-		case "GEORGIA":
-			abbreviation = "GA";
-			break;
-		case "HAWAII":
-			abbreviation = "HI";
-			break;
-		case "IDAHO":
-			abbreviation = "ID";
-			break;
-		case "ILLINOIS":
-			abbreviation = "IL";
-			break;
-		case "INDIANA":
-			abbreviation = "IN";
-			break;
-		case "IOWA":
-			abbreviation = "IA";
-			break;
-		case "KANSAS":
-			abbreviation = "KS";
-			break;
-		case "KENTUCKY":
-			abbreviation = "KY";
-			break;
-		case "LOUISIANA":
-			abbreviation = "LA";
-			break;
-		case "MAINE":
-			abbreviation = "ME";
-			break;
-		case "MARYLAND":
-			abbreviation = "MD";
-			break;
-		case "MASSACHUSETTS":
-			abbreviation = "MA";
-			break;
-		case "MICHIGAN":
-			abbreviation = "MI";
-			break;
-		case "MINNESOTA":
-			abbreviation = "MN";
-			break;
-		case "MISSISSIPPI":
-			abbreviation = "MS";
-			break;
-		case "MISSOURI":
-			abbreviation = "MO";
-			break;
-		case "MONTANA":
-			abbreviation = "MT";
-			break;
-		case "NEBRASKA":
-			abbreviation = "NE";
-			break;
-		case "NEVADA":
-			abbreviation = "NV";
-			break;
-		case "NEW HAMPSHIRE":
-			abbreviation = "NH";
-			break;
-		case "NEW JERSEY":
-			abbreviation = "NJ";
-			break;
-		case "NEW MEXICO":
-			abbreviation = "NM";
-			break;
-		case "NEW YORK":
-			abbreviation = "NY";
-			break;
-		case "NORTH CAROLINA":
-			abbreviation = "NC";
-			break;
-		case "NORTH DAKOTA":
-			abbreviation = "ND";
-			break;
-		case "OHIO":
-			abbreviation = "OH";
-			break;
-		case "OKLAHOMA":
-			abbreviation = "OK";
-			break;
-		case "OREGON":
-			abbreviation = "OR";
-			break;
-		case "PENNSYLVANIA":
-			abbreviation = "PA";
-			break;
-		case "RHODE ISLAND":
-			abbreviation = "RI";
-			break;
-		case "SOUTH CAROLINA":
-			abbreviation = "SC";
-			break;
-		case "SOUTH DAKOTA":
-			abbreviation = "SD";
-			break;
-		case "TENNESSEE":
-			abbreviation = "TN";
-			break;
-		case "TEXAS":
-			abbreviation = "TX";
-			break;
-		case "UTAH":
-			abbreviation = "UT";
-			break;
-		case "VERMONT":
-			abbreviation = "VT";
-			break;
-		case "VIRGINIA":
-			abbreviation = "VA";
-			break;
-		case "WASHINGTON":
-			abbreviation = "WA";
-			break;
-		case "WEST VIRGINIA":
-			abbreviation = "WV";
-			break;
-		case "WISCONSIN":
-			abbreviation = "WI";
-			break;
-		case "WYOMING":
-			abbreviation = "WY";
-			break;
-		default:
-			abbreviation = "not found";
-		}
-
-		return abbreviation.toUpperCase();
+// Constructors
+	public StateHelper() {
+		super();
 	}
 
-	public static String AbbreviationToState(String abbreviation) {
+// Methods
+	public static Boolean stateToAbbreviationFound(String state) {
+		if (stateToAbbreviation(state).equalsIgnoreCase("NOT FOUND")) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
+	
+	
+	public static String stateToAbbreviation(String state) {
+		if (state == null || state.isEmpty()) {
+			state = "NOT FOUND";
+		}
+
+		return switch (state.toUpperCase()) {
+		case "ALABAMA" -> "AL";
+		case "ALASKA" -> "AK";
+		case "ARIZONA" -> "AZ";
+		case "ARKANSAS" -> "AR";
+		case "CALIFORNIA" -> "CA";
+		case "COLORADO" -> "CO";
+		case "CONNECTICUT" -> "CT";
+		case "DELAWARE" -> "DE";
+		case "FLORIDA" -> "FL";
+		case "GEORGIA" -> "GA";
+		case "HAWAII" -> "HI";
+		case "IDAHO" -> "ID";
+		case "ILLINOIS" -> "IL";
+		case "INDIANA" -> "IN";
+		case "IOWA" -> "IA";
+		case "KANSAS" -> "KS";
+		case "KENTUCKY" -> "KY";
+		case "LOUISIANA" -> "LA";
+		case "MAINE" -> "ME";
+		case "MARYLAND" -> "MD";
+		case "MASSACHUSETTS" -> "MA";
+		case "MICHIGAN" -> "MI";
+		case "MINNESOTA" -> "MN";
+		case "MISSISSIPPI" -> "MS";
+		case "MISSOURI" -> "MO";
+		case "MONTANA" -> "MT";
+		case "NEBRASKA" -> "NE";
+		case "NEVADA" -> "NV";
+		case "NEW HAMPSHIRE" -> "NH";
+		case "NEW JERSEY" -> "NJ";
+		case "NEW MEXICO" -> "NM";
+		case "NEW YORK" -> "NY";
+		case "NORTH CAROLINA" -> "NC";
+		case "NORTH DAKOTA" -> "ND";
+		case "OHIO" -> "OH";
+		case "OKLAHOMA" -> "OK";
+		case "OREGON" -> "OR";
+		case "PENNSYLVANIA" -> "PA";
+		case "RHODE ISLAND" -> "RI";
+		case "SOUTH CAROLINA" -> "SC";
+		case "SOUTH DAKOTA" -> "SD";
+		case "TENNESSEE" -> "TN";
+		case "TEXAS" -> "TX";
+		case "UTAH" -> "UT";
+		case "VERMONT" -> "VT";
+		case "VIRGINIA" -> "VA";
+		case "WASHINGTON" -> "WA";
+		case "WEST VIRGINIA" -> "WV";
+		case "WISCONSIN" -> "WI";
+		case "WYOMING" -> "WY";
+		default -> "NOT FOUND";
+		};
+
+	}
+
+	public static String abbreviationToState(String abbreviation) {
 		if (abbreviation == null || abbreviation.isEmpty()) {
-			abbreviation = "";
+			return "UNKNOWN";
 		}
 
-		String stateName;
-
-		switch (abbreviation.toUpperCase()) {
-		case "AL":
-			stateName = "ALABAMA";
-			break;
-		case "AK":
-			stateName = "ALASKA";
-			break;
-		case "AZ":
-			stateName = "ARIZONA";
-			break;
-		case "AR":
-			stateName = "ARKANSAS";
-			break;
-		case "CA":
-			stateName = "CALIFORNIA";
-			break;
-		case "CO":
-			stateName = "COLORADO";
-			break;
-		case "CT":
-			stateName = "CONNECTICUT";
-			break;
-		case "DE":
-			stateName = "DELAWARE";
-			break;
-		case "FL":
-			stateName = "FLORIDA";
-			break;
-		case "GA":
-			stateName = "GEORGIA";
-			break;
-		case "HI":
-			stateName = "HAWAII";
-			break;
-		case "ID":
-			stateName = "IDAHO";
-			break;
-		case "IL":
-			stateName = "ILLINOIS";
-			break;
-		case "IN":
-			stateName = "INDIANA";
-			break;
-		case "IA":
-			stateName = "IOWA";
-			break;
-		case "KS":
-			stateName = "KANSAS";
-			break;
-		case "KY":
-			stateName = "KENTUCKY";
-			break;
-		case "LA":
-			stateName = "LOUISIANA";
-			break;
-		case "ME":
-			stateName = "MAINE";
-			break;
-		case "MD":
-			stateName = "MARYLAND";
-			break;
-		case "MA":
-			stateName = "MASSACHUSETTS";
-			break;
-		case "MI":
-			stateName = "MICHIGAN";
-			break;
-		case "MN":
-			stateName = "MINNESOTA";
-			break;
-		case "MS":
-			stateName = "MISSISSIPPI";
-			break;
-		case "MO":
-			stateName = "MISSOURI";
-			break;
-		case "MT":
-			stateName = "MONTANA";
-			break;
-		case "NE":
-			stateName = "NEBRASKA";
-			break;
-		case "NV":
-			stateName = "NEVADA";
-			break;
-		case "NH":
-			stateName = "NEW HAMPSHIRE";
-			break;
-		case "NJ":
-			stateName = "NEW JERSEY";
-			break;
-		case "NM":
-			stateName = "NEW MEXICO";
-			break;
-		case "NY":
-			stateName = "NEW YORK";
-			break;
-		case "NC":
-			stateName = "NORTH CAROLINA";
-			break;
-		case "ND":
-			stateName = "NORTH DAKOTA";
-			break;
-		case "OH":
-			stateName = "OHIO";
-			break;
-		case "OK":
-			stateName = "OKLAHOMA";
-			break;
-		case "OR":
-			stateName = "OREGON";
-			break;
-		case "PA":
-			stateName = "PENNSYLVANIA";
-			break;
-		case "RI":
-			stateName = "RHODE ISLAND";
-			break;
-		case "SC":
-			stateName = "SOUTH CAROLINA";
-			break;
-		case "SD":
-			stateName = "SOUTH DAKOTA";
-			break;
-		case "TN":
-			stateName = "TENNESSEE";
-			break;
-		case "TX":
-			stateName = "TEXAS";
-			break;
-		case "UT":
-			stateName = "UTAH";
-			break;
-		case "VT":
-			stateName = "VERMONT";
-			break;
-		case "VA":
-			stateName = "VIRGINIA";
-			break;
-		case "WA":
-			stateName = "WASHINGTON";
-			break;
-		case "WV":
-			stateName = "WEST VIRGINIA";
-			break;
-		case "WI":
-			stateName = "WISCONSIN";
-			break;
-		case "WY":
-			stateName = "WYOMING";
-			break;
-		default:
-			stateName = "UNKNOWN";
-		}
-
-		return stateName.toUpperCase();
+		return switch (abbreviation.toUpperCase()) {
+		case "AL" -> "ALABAMA";
+		case "AK" -> "ALASKA";
+		case "AZ" -> "ARIZONA";
+		case "AR" -> "ARKANSAS";
+		case "CA" -> "CALIFORNIA";
+		case "CO" -> "COLORADO";
+		case "CT" -> "CONNECTICUT";
+		case "DE" -> "DELAWARE";
+		case "FL" -> "FLORIDA";
+		case "GA" -> "GEORGIA";
+		case "HI" -> "HAWAII";
+		case "ID" -> "IDAHO";
+		case "IL" -> "ILLINOIS";
+		case "IN" -> "INDIANA";
+		case "IA" -> "IOWA";
+		case "KS" -> "KANSAS";
+		case "KY" -> "KENTUCKY";
+		case "LA" -> "LOUISIANA";
+		case "ME" -> "MAINE";
+		case "MD" -> "MARYLAND";
+		case "MA" -> "MASSACHUSETTS";
+		case "MI" -> "MICHIGAN";
+		case "MN" -> "MINNESOTA";
+		case "MS" -> "MISSISSIPPI";
+		case "MO" -> "MISSOURI";
+		case "MT" -> "MONTANA";
+		case "NE" -> "NEBRASKA";
+		case "NV" -> "NEVADA";
+		case "NH" -> "NEW HAMPSHIRE";
+		case "NJ" -> "NEW JERSEY";
+		case "NM" -> "NEW MEXICO";
+		case "NY" -> "NEW YORK";
+		case "NC" -> "NORTH CAROLINA";
+		case "ND" -> "NORTH DAKOTA";
+		case "OH" -> "OHIO";
+		case "OK" -> "OKLAHOMA";
+		case "OR" -> "OREGON";
+		case "PA" -> "PENNSYLVANIA";
+		case "RI" -> "RHODE ISLAND";
+		case "SC" -> "SOUTH CAROLINA";
+		case "SD" -> "SOUTH DAKOTA";
+		case "TN" -> "TENNESSEE";
+		case "TX" -> "TEXAS";
+		case "UT" -> "UTAH";
+		case "VT" -> "VERMONT";
+		case "VA" -> "VIRGINIA";
+		case "WA" -> "WASHINGTON";
+		case "WV" -> "WEST VIRGINIA";
+		case "WI" -> "WISCONSIN";
+		case "WY" -> "WYOMING";
+		default -> "UNKNOWN";
+		};
 	}
 
 }

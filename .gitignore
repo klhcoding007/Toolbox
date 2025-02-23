@@ -1,6 +1,6 @@
 .metadata
-ToolBox/toolbox/target/
 *.class
 .classpath
 .project
-ToolBox/toolbox/.settings/
+ToolBox/*/.settings/
+ToolBox/*/target/
